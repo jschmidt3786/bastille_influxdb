@@ -1,0 +1,9 @@
+# Bastille Jail Template for influxdb
+PKG influxdb
+CP usr /
+# TODO: get cert, enable https
+SYSRC influxd_enable=YES
+SERVICE influxd start
+RDR tcp 8086 8086
+#RDR tcp 8088 8088 # backup/restore
+#RDR udp 8089 8089 # UDP
